@@ -8,12 +8,77 @@ namespace ConsoleApp1
 {
     public class Program
     {
-        public static void Main(string[] args)
+        static int j=30;
+        private static void Main(string[] args)
         {
             //System.Console.Write("Hello World!");
             //System.Console.Read();
+
+            int x = 1, y = 23, c = 34;
+            bool btype = false;//Create a variable that stores ture or false;
+            int iTunes = 2;
+
+
+            var name = "Bugs Bunny";
+            Type nameType = name.GetType();
+            Type xType = x.GetType();
+            //var k;//必须初始化
+            //k = iTunes;
+
+            WriteLine($"x:{x},xType:{xType}");
+
+            WriteLine($"name:{name};type:{nameType}");
             WriteLine("Hello World");
+            WriteLine("Come on!Baby!");
+
+            int j = 20;
+            WriteLine($"j:{j},J:{ConsoleApp1.Program.j}");
+
+            for (int i = 0; i < 10; i++)
+            {
+                WriteLine($"i:{i}");
+            }
+            WriteGreeting(TimeOfDay.Morning);
+
+            //foreach (var t in TimeOfDay)
+            //{
+            //    WriteGreeting(t);
+            //}
+
+            WriteLine($"{TimeOfDay.Evening.ToString()}");
+            WriteLine(TimeOfDay.Afternoon.ToString());
+
+            TimeOfDay time2 = (TimeOfDay)Enum.Parse(typeof(TimeOfDay), "AfternooN", true);
+            WriteLine(time2.ToString());
             ReadKey();
+            return;
+        }
+
+        static void WriteGreeting(TimeOfDay timeOfDay)
+        {
+            switch (timeOfDay)
+            {
+                case TimeOfDay.Morning:
+                    WriteLine("Good Morning!");
+                    break;
+                case TimeOfDay.Afternoon:
+                    WriteLine("Good Afternoon!");
+                    break;
+                case TimeOfDay.Evening:
+                    WriteLine("Good Evening!");
+                    break;
+                default:
+                    WriteLine("Hello!");
+                    break;
+            }
         }
     }
+
+    public enum TimeOfDay
+    {
+        Morning=0,
+        Afternoon=1,
+        Evening=2,
+    }
 }
+

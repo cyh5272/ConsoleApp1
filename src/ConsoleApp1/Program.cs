@@ -18,6 +18,7 @@ namespace ConsoleApp1
             bool btype = false;//Create a variable that stores ture or false;
             int iTunes = 2;
 
+            MyClass myClass= new MyClass();
 
             var name = "Bugs Bunny";
             Type nameType = name.GetType();

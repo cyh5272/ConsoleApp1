@@ -40,8 +40,7 @@ namespace ConsoleApp1
             {
                 WriteLine($"i:{i}");
             }
-
-            IEnumerator<string> ie = GetInt();
+            
 
             while (ie.MoveNext())
             {

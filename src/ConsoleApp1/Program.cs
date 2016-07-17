@@ -25,6 +25,7 @@ namespace ConsoleApp1
             Type xType = x.GetType();
             //var k;//必须初始化
             //k = iTunes;
+            
 
             WriteLine($"x:{x},xType:{xType}");
 
@@ -39,12 +40,25 @@ namespace ConsoleApp1
             {
                 WriteLine($"i:{i}");
             }
+
+            IEnumerator<string> ie = GetInt();
+
+            while (ie.MoveNext())
+            {
+
+            }
             WriteGreeting(TimeOfDay.Morning);
 
             //foreach (var t in TimeOfDay)
             //{
             //    WriteGreeting(t);
             //}
+
+
+            foreach (string i in GetInt())
+            {
+                Console.WriteLine($"{i}");
+            }
 
             WriteLine($"{TimeOfDay.Evening.ToString()}");
             WriteLine(TimeOfDay.Afternoon.ToString());
@@ -53,6 +67,14 @@ namespace ConsoleApp1
             WriteLine(time2.ToString());
             ReadKey();
             return;
+        }
+
+        public static IEnumerable<string> GetInt()
+        {
+            for (int i = 3; i >= 0; i--)
+            {
+               yield return i.ToString();
+            }
         }
 
         static void WriteGreeting(TimeOfDay timeOfDay)

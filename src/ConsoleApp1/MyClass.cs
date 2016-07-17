@@ -9,17 +9,13 @@ namespace ConsoleApp1
     {
         private string _name;
 
-        public MyClass()
-        {
-        }
-
         //public string Name
         //{
         //    get { return _name; }
         //    set { _name = value; }
         //}
 
-        public MyClass(string _name)
+        public MyClass(string _name="Alber zhang")
         {
             this._name = _name;
         }
